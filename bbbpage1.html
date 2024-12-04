@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>音乐探索之旅</title>
+    <style>
+        h1 {
+            font-family: cursive, sans-serif;
+            font-size: 45px;
+            margin: 40px;
+            margin-top: 30px;
+            color: rgb(55, 185, 124);
+            /* 设置文字颜色为白色，以便在背景上可见 */
+            margin-bottom: 20px;
+            /* 为h1添加底部外边距 */
+        }
+
+        body {
+            font-size: 30px;
+            font-family: cursive, sans-serif;
+            height: 100%;
+            background-image: url('屏幕截图 2024-12-03 091321.png');
+            /* 设置背景图片 */
+            background-size: cover;
+            /* 覆盖整个屏幕 */
+            background-position: center;
+            /* 居中显示 */
+            background-attachment: fixed;
+            /* 固定背景图片，不随滚动条滚动 */
+        }
+
+        .animated-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 36px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: inherit;
+            border-radius: 100px;
+            font-weight: 600;
+            color: greenyellow;
+            box-shadow: 0 0 0 2px greenyellow;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            
+        }
+
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: greenyellow;
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .arr-1 {
+            right: 16px;
+        }
+
+        .animated-button .arr-2 {
+            left: -25%;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
+
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
+
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
+
+        .animated-button:hover svg {
+            fill: #212121;
+        }
+
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px greenyellow;
+        }
+
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
+
+        .botton-container {
+            display: flex;
+            /* 启用Flexbox */
+            justify-content: space-between;
+            /* 水平方向上均匀分布子元素 */
+            align-items: flex-end;
+            /* 垂直方向上对齐到容器底部 */
+            width: 100%;
+            /* 容器宽度占满父元素 */
+            padding: 0 10px;
+            /* 可选：为容器添加一些内边距 */
+            box-sizing: border-box;
+            /* 确保padding不会增加元素总宽度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1 style=" text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">音乐探索之旅</h1>
+    </div>
+
+    <div class="content">
+        <p
+            style="color: rgb(55, 185, 124); font-family: cursive, sans-serif;; position: absolute; top: 100px; left: 50px; font-size: 25px; text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000;  /* 右下角阴影 */">
+            Author : 启明计科2401胡致煦
+        </p><br><br><br>
+        <p style="color: rgb(25, 191, 172); 
+         text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">欢迎来到我们的音乐探索之旅！</p>
+        <p style="color: rgb(25, 191, 172); text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">在这个特别策划的网页中，</p>
+        <p style="color: rgb(25, 191, 172); text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">我们将一同踏上一段美妙的音乐旅程。</p>
+        <p style="color: rgb(25, 191, 172); text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">
+            我愿分享那些</p>
+        <p style="color: rgb(25, 191, 172); text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000;  /* 右下角阴影 */">我所喜爱的，珍视的，喟叹的乐声,</p>
+        <P style="color: rgb(25, 191, 172); text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">让我们一起沉浸于音乐的纯粹与曼妙。
+        </p>
+        <p style="color: rgb(25, 191, 172); text-shadow:
+        -1px -1px 0 #000,  /* 左上角阴影 */
+         1px -1px 0 #000,  /* 右上角阴影 */
+        -1px  1px 0 #000,  /* 左下角阴影 */
+         1px  1px 0 #000;  /* 右下角阴影 */">去发现每一首歌曲背后的故事......</p>
+    </div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://ortunate.github.io/Homework/web/d11111.html" style="color: rgb(128, 65, 235); text-shadow:
+    -1px -1px 0 #000,  /* 左上角阴影 */
+     1px -1px 0 #000,  /* 右上角阴影 */
+    -1px  1px 0 #000,  /* 左下角阴影 */
+     1px  1px 0 #000;  /* 右下角阴影 */">寝室主页</a>&nbsp;&nbsp;&nbsp;<a href="https://ortunate.github.io/Homework/web/d11111.html" style="color: rgb(128, 65, 235); text-shadow:
+    -1px -1px 0 #000,  /* 左上角阴影 */
+     1px -1px 0 #000,  /* 右上角阴影 */
+    -1px  1px 0 #000,  /* 左下角阴影 */
+     1px  1px 0 #000;  /* 右下角阴影 */">班级主页</a><br><br>
+
+    <div class="botton-container">
+        <button class="animated-button" onclick="window.location.href='guo.html'">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">《郭源潮》</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button>
+        <br><br>
+        <button class="animated-button" onclick="window.location.href='life_guider.html'">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">《人间指南》</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button><br><br>
+        <button class="animated-button" onclick="window.location.href='past_lives.html'">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">《Past lives》</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button> <br><br>
+        <button class="animated-button" onclick="window.location.href='together.html'">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">《いつも何度でも》</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+
+</body>
+
+</html>

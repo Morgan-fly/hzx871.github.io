@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Song 4 - 音乐探索之旅</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- 如果有共享样式 -->
+    <style>
+        /* 设置背景图片 */
+        body {
+            background-image: url('2ed255a45f0cd1e2422c51a268d0198b.jpg');
+            /* 设置背景图片 */
+            background-size: cover;
+            /* 覆盖整个屏幕 */
+            background-position: center;
+            /* 居中显示 */
+            background-attachment: fixed;
+            /* 固定背景图片，不随滚动条滚动 */
+            height: 100%;
+            /* 设置body的高度为视口的高度 */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin: 30px;
+            padding: 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: cursive, sans-serif;
+            font-size: 35px;
+            margin: 40px;
+            margin-top: 0;
+            color: rgb(106, 32, 135);
+            /* 设置文字颜色为白色，以便在背景上可见 */
+            margin-bottom: 20px;
+            /* 为h1添加底部外边距 */
+            text-shadow:
+                -1px -1px 0 #000,
+                /* 左上角阴影 */
+                1px -1px 0 #000,
+                /* 右上角阴影 */
+                -1px 1px 0 #000,
+                /* 左下角阴影 */
+                1px 1px 0 #000;
+            /* 右下角阴影 */
+        }
+
+        h2 {
+            font-family: cursive, sans-serif;
+            font-size: 50px;
+            margin: 0;
+            color: rgb(132, 137, 140);
+            /* 设置文字颜色为白色，以便在背景上可见 */
+            /* 为h1添加底部外边距 */
+            text-shadow:
+                -1px -1px 0 #000,
+                /* 左上角阴影 */
+                1px -1px 0 #000,
+                /* 右上角阴影 */
+                -1px 1px 0 #000,
+                /* 左下角阴影 */
+                1px 1px 0 #000;
+            /* 右下角阴影 */
+        }
+
+        p {
+            font-family: cursive, sans-serif;
+            margin-top: 10px;
+            font-size: 32px;
+            color: rgb(132, 137, 140);
+            /* 设置文字颜色为白色，以便在背景上可见 */
+            text-shadow:
+                -1px -1px 0 #000,
+                /* 左上角阴影 */
+                1px -1px 0 #000,
+                /* 右上角阴影 */
+                -1px 1px 0 #000,
+                /* 左下角阴影 */
+                1px 1px 0 #000;
+            /* 右下角阴影 */
+
+        }
+
+        .animated-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 36px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: inherit;
+            border-radius: 100px;
+            font-weight: 600;
+            color: greenyellow;
+            box-shadow: 0 0 0 2px greenyellow;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: greenyellow;
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .arr-1 {
+            right: 16px;
+        }
+
+        .animated-button .arr-2 {
+            left: -25%;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
+
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
+
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
+
+        .animated-button:hover svg {
+            fill: #212121;
+        }
+
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px greenyellow;
+        }
+
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
+
+        .botton-container {
+            display: flex;
+            /* 启用Flexbox */
+            justify-content: space-between;
+            /* 水平方向上均匀分布子元素 */
+            text-align: right;
+            /* 垂直方向上对齐到容器底部 */
+            width: 100%;
+            /* 容器宽度占满父元素 */
+            padding: 0 10px;
+            /* 可选：为容器添加一些内边距 */
+            box-sizing: border-box;
+            /* 确保padding不会增加元素总宽度 */
+        }
+
+        .button {
+            display: inline-block;
+            margin-right: 10px;
+            /* 可选：在按钮之间添加间距 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h2>《Past lives》 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  by Sapientdream/Slushii</h2>
+        <p style="margin-left: 30px;">氛围<br>
+            凌晨四五点天蒙蒙亮的感觉<br>
+            我一个人走在路上<br>
+            微弱的光撒在我身边<br>
+            街上路边巷子里没有一个人<br>
+            我是自由的<br>
+            可以去河边听水流潺潺<br>
+            可以去桥上吹晨风<br>
+            可以独自坐在荡秋千上<br>
+            然后陷入自己的回忆<br>
+            某个人或某个事<br>
+            就像走马灯一样浮现出来<br>
+        </p>
+        <audio controls>
+            <source src="Prod by KK - Past Lives.mp3" type="audio/mpeg">
+        </audio><br><br>  
+        <p>
+            <button class="animated-button" onclick="window.location.href='bbbpage1.html'" style="margin-left: 20px">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+                </svg>
+                <span class="text">返回主页</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+        </p>
+        
+        <p>
+            <button class="animated-button" onclick="window.location.href='together.html'"
+                style="margin-left: 20px;">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">《いつも何度でも》</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

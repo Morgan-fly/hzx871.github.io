@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Table Example</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .animated-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 36px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: inherit;
+            border-radius: 100px;
+            font-weight: 600;
+            color: rgb(16, 16, 16);
+            box-shadow: 0 0 0 2px rgb(7, 7, 7);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: rgb(7, 7, 7);
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .arr-1 {
+            right: 16px;
+        }
+
+        .animated-button .arr-2 {
+            left: -25%;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
+
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
+
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
+
+        .animated-button:hover svg {
+            fill: #212121;
+        }
+
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px rgb(17, 17, 17);
+        }
+
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
+
+        p {
+            font-family: cursive, sans-serif;
+            font-size: 20px;
+            /* 设置文字颜色为白色，以便在背景上可见 */
+        }
+
+        .botton-container {
+            display: flex;
+            /* 启用Flexbox */
+            justify-content: space-between;
+            /* 水平方向上均匀分布子元素 */
+            align-items: flex-end;
+            /* 垂直方向上对齐到容器底部 */
+            width: 100%;
+            /* 容器宽度占满父元素 */
+            padding: 0 10px;
+            /* 可选：为容器添加一些内边距 */
+            box-sizing: border-box;
+            /* 确保padding不会增加元素总宽度 */
+        }
+    </style>
+</head>
+
+<body>
+    <p> 额外写一页，取悦一下自己(老师别当作业看)<br>
+        立个flag，寒假完善一下这个任务<br>
+        想写的很多，想分享的难以穷尽<br>(deadline赶不上了&&懒得写了)
+        再分享一小部分目前能记起的触动我的一些歌曲<br>
+        叠甲：Feeling部分来自于网抑云，符合你想法的就是我写的，不符合就是抄的。
+    </p>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Singer</th>
+            <th>Feeling</th>
+        </tr>
+        <tr>
+            <td>荒诞的日子里</td>
+            <td>驼儿</td>
+            <td>一点一句平静得像死海微澜</td>
+        </tr>
+        <tr>
+            <td>山雀</td>
+            <td>万青</td>
+            <td>掏不出二十二块钱买专辑&nbsp;55555</td>
+        </tr>
+        <tr>
+            <td>芳草地</td>
+            <td>陈粒</td>
+            <td>等长夜付真心 在安静的芳草地</td>
+        </tr>
+        <tr>
+            <td>鸟之诗</td>
+            <td>Saiki</td>
+            <td>生活索然无味，尸体cos人类</td>
+        </tr>
+        <tr>
+            <td>诀别书</td>
+            <td>邓垚</td>
+            <td>欢快的却是回不去的昨天</td>
+        </tr>
+        <tr>
+            <td>鸽子</td>
+            <td>宋东野</td>
+            <td>温柔却有力的低吼</td>
+        </tr>
+        <tr>
+            <td>马</td>
+            <td>福禄寿FloruitShow</td>
+            <td>渴望希望降临于( )，并在春暖花开里伤逝</td>
+        </tr>
+        <tr>
+            <td>南三环东路</td>
+            <td>DOUDOU/福禄寿FloruitShow(?)</td>
+            <td>会走到家的，哪怕再远再难</td>
+        </tr>
+        <tr>
+            <td>十二月的奇迹</td>
+            <td>罗言/EXO(?)</td>
+            <td>藏于十二月的秘密无人知晓</td>
+        </tr>
+        <tr>
+            <td>Someone Like You</td>
+            <td>Adele</td>
+            <td>Lasts in love or ends in pain? </td>
+        </tr>
+        <tr>
+            <td>レクイエム</td>
+            <td>Hiiragi Nao</td>
+            <td>听这个写作业跟写遗书一样</td>
+        </tr>
+        <tr>
+            <td>numb</td>
+            <td>XXXtentation</td>
+            <td>Pain never fades itself</td>
+        </tr>
+        <tr>
+            <td>好运来</td>
+            <td>祖海</td>
+            <td>就说你喜不喜欢吧！</td>
+        </tr>
+        <tr>
+            <td>但</td>
+            <td>草东没有派对</td>
+            <td>我真的不想学了，但...但天黑得太快想走早就来不及</td>
+        </tr>
+
+        <tr>
+            <td>凄美地</td>
+            <td>郭顶</td>
+            <td>陪我度过高中，虽然慢慢淡了...</td>
+        </tr>
+        <tr>
+            <td>你的眼神是一场盛大的废墟</td>
+            <td>Bo Peep</td>
+            <td>你的眼神是一场绚烂的日落</td>
+        </tr>
+        <tr>
+            <td>who do you cry for?</td>
+            <td>CPRCRN/Shiloh Dynasty</td>
+            <td>Loneliness is f**king romantic.</td>
+        </tr>
+        <tr>
+            <td>Duvet</td>
+            <td>Boa-Twilight</td>
+            <td>走马灯杀了我</td>
+        </tr>
+        <tr>
+            <td>罗生门(Fellow)</td>
+            <td>梨冻紧；wiz_h张子豪</td>
+            <td>豪庭(想让张zi豪唱给我听)</td>
+        </tr>
+
+    </table>
+    <p>
+        <button class="animated-button" onclick="window.location.href='bbbpage1.html'" style="margin-left: 20px">
+            <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+            </path>
+            </svg>
+            <span class="text">返回主页</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button>
+    </p>
+</body>
+
+</html>

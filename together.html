@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Song 4 - 音乐探索之旅</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- 如果有共享样式 -->
+    <style>
+        /* 设置背景图片 */
+        body {
+          background-image: url('a276cc321adb09a6b3ea64d79200bb8f.jpg'); /* 设置背景图片 */
+          background-size: cover; /* 覆盖整个屏幕 */
+          background-position: center; /* 居中显示 */
+          background-attachment: fixed; /* 固定背景图片，不随滚动条滚动 */
+          height: 100%; /* 设置body的高度为视口的高度 */
+          display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin: 30px;
+            padding: 0;
+            width: 100%;
+            text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000; 
+        }
+        h1 {
+            font-size: 35px;
+          margin: 40px;
+          margin-top: 0;
+          color: rgb(106, 32, 135); /* 设置文字颜色为白色，以便在背景上可见 */
+          margin-bottom: 20px; /* 为h1添加底部外边距 */
+          text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000; 
+        }
+        h2 {
+          font-size: 50px;
+          margin: 10px;
+          color: rgb(183, 33, 28); /* 设置文字颜色为白色，以便在背景上可见 */
+          margin-bottom: 20px; /* 为h1添加底部外边距 */
+          text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000; 
+        }
+        p {
+            font-size: 35px;
+          color: rgb(183, 33, 28); /* 设置文字颜色为白色，以便在背景上可见 */
+          text-shadow:
+            -1px -1px 0 #000,  /* 左上角阴影 */
+             1px -1px 0 #000,  /* 右上角阴影 */
+            -1px  1px 0 #000,  /* 左下角阴影 */
+             1px  1px 0 #000; 
+        }
+        .animated-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 36px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: inherit;
+            border-radius: 100px;
+            font-weight: 600;
+            color: greenyellow;
+            box-shadow: 0 0 0 2px greenyellow;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: greenyellow;
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .arr-1 {
+            right: 16px;
+        }
+
+        .animated-button .arr-2 {
+            left: -25%;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
+
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
+
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
+
+        .animated-button:hover svg {
+            fill: #212121;
+        }
+
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px greenyellow;
+        }
+
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
+
+        .botton-container {
+            display: flex;
+            /* 启用Flexbox */
+            justify-content: space-between;
+            /* 水平方向上均匀分布子元素 */
+            align-items: flex-end;
+            /* 垂直方向上对齐到容器底部 */
+            width: 100%;
+            /* 容器宽度占满父元素 */
+            padding: 0 10px;
+            /* 可选：为容器添加一些内边距 */
+            box-sizing: border-box;
+            /* 确保padding不会增加元素总宽度 */
+        }
+        .container {
+            position: absolute;
+            top: 0;
+            /* 调整为适当的位置 */
+            right: 40px;
+            /* 将元素放置在右侧 */
+        }
+
+        :root {
+            --dark-brown: #2d2623;
+            --dark-blue: #22366c;
+            --light-blue: #439abf;
+            --med-blue: #294679;
+            --stars: #e9ae4b;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        *:before,
+        *:after {
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .window {
+            width: 275px;
+            height: 440px;
+            background-color: var(--med-blue);
+            border: 18px solid var(--dark-brown);
+            position: relative;
+            border-bottom: none;
+        }
+
+        .window:before {
+            background-color: var(--dark-brown);
+            width: calc(100% + 68px);
+            height: 18px;
+            left: -34px;
+            bottom: 0;
+            border-top: 6px solid var(--dark-blue);
+        }
+
+        .window:after {
+            width: calc(100% + 18px);
+            height: 6px;
+            background-color: var(--light-blue);
+            bottom: 12px;
+            left: -9px;
+        }
+
+        .window-details {
+            position: relative;
+            height: 12px;
+            width: 100%;
+            top: 190px;
+            background-color: var(--dark-brown);
+        }
+
+        .window-details:before,
+        .window-details:after {
+            border: 6px solid var(--light-blue);
+            width: 100%;
+            border-top: none;
+        }
+
+        .window-details:before {
+            height: 190px;
+            top: -190px;
+        }
+
+        .window-details:after {
+            height: 208px;
+            bottom: -208px;
+            border-bottom: none;
+        }
+
+        .mountains-left,
+        .mountains-right {
+            position: absolute;
+            bottom: 18px;
+            width: 0;
+            height: 0;
+            border-bottom: 60px solid var(--dark-blue);
+        }
+
+        .mountains-left {
+            left: 6px;
+            border-right: 22px solid transparent;
+        }
+
+        .mountains-right {
+            right: 6px;
+            border-left: 22px solid transparent;
+        }
+
+        .mountains-left:before,
+        .mountains-left:after,
+        .mountains-right:before {
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-bottom: 60px solid var(--dark-blue);
+        }
+
+        .mountains-left:before {
+            left: 22px;
+        }
+
+        .mountains-right:before {
+            right: 0px;
+        }
+
+        .moon {
+            background-color: var(--stars);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 35px;
+            top: 35px;
+        }
+
+        .moon:before {
+            background-color: var(--med-blue);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            position: absolute;
+            left: 12px;
+            top: 4px;
+        }
+
+        .star,
+        .star:before,
+        .star:after {
+            background-color: var(--stars);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .star-glow {
+            animation: glow ease-in-out infinite alternate;
+        }
+
+        .star-1 {
+            width: 8px;
+            height: 8px;
+            top: 230px;
+            left: 50%;
+            animation-duration: 5s;
+        }
+
+        .star-1:before {
+            width: 4px;
+            height: 4px;
+            left: -90px;
+            top: 60px;
+            animation: glow ease-in-out infinite alternate;
+            animation-duration: 6s;
+        }
+
+        .star-1:after {
+            width: 3px;
+            height: 3px;
+            left: 80px;
+            top: 10px;
+            animation: glow ease-in-out infinite alternate;
+            animation-duration: 2s;
+        }
+
+        .star-2 {
+            width: 4px;
+            height: 4px;
+            top: 30px;
+            left: 50%;
+            animation-duration: 8s;
+        }
+
+        .star-2:before {
+            width: 4px;
+            height: 4px;
+            left: 70px;
+            top: 80px;
+            animation: glow ease-in-out infinite alternate;
+            animation-duration: 4s;
+        }
+
+        .star-2:after {
+            width: 4px;
+            height: 4px;
+            left: -80px;
+            top: 100px;
+            animation: glow ease-in-out infinite alternate;
+            animation-duration: 3s;
+        }
+
+        .star-3 {
+            width: 6px;
+            height: 6px;
+            top: 215px;
+            left: 45px;
+        }
+
+        .star-3:before {
+            width: 3px;
+            height: 3px;
+            top: 54px;
+            left: 75px;
+        }
+
+        .star-3:after {
+            width: 3px;
+            height: 3px;
+            top: 10px;
+            left: 140px;
+        }
+
+        .star-4 {
+            width: 3px;
+            height: 3px;
+            top: 20px;
+            left: 100px;
+        }
+
+        .star-4:before {
+            width: 6px;
+            height: 6px;
+            top: 32px;
+            left: -18px;
+        }
+
+        .star-4:after {
+            width: 3px;
+            height: 3px;
+            top: 135px;
+            left: -35px;
+        }
+
+        .star-5 {
+            width: 3px;
+            height: 3px;
+            top: 40px;
+            left: 210px;
+        }
+
+        .star-5:before {
+            width: 3px;
+            height: 3px;
+            top: 110px;
+            left: 10px;
+        }
+
+        @keyframes glow {
+
+            0%,
+            50% {
+                box-shadow: 0px 0px 0px 0px var(--stars);
+            }
+
+            80%,
+            100% {
+                box-shadow: 0px 0px 8px 2px var(--stars);
+            }
+        }
+
+        .clouds {
+            background-color: var(--dark-blue);
+            width: 180px;
+            height: 12px;
+            position: absolute;
+            left: 25px;
+            top: 74px;
+            border-radius: 14px;
+        }
+
+        .clouds:before,
+        .clouds:after,
+        .clouds span {
+            height: inherit;
+            border-radius: inherit;
+            background-color: inherit;
+            position: absolute;
+        }
+
+        .clouds:before {
+            width: 95px;
+            top: 24px;
+            left: 35px;
+        }
+
+        .clouds:after {
+            width: 55px;
+            top: -24px;
+            left: 100px;
+        }
+
+        .clouds span:first-child {
+            width: 55px;
+            top: -12px;
+            left: 100px;
+        }
+
+        .clouds span:nth-child(2) {
+            width: 70px;
+            top: 12px;
+            left: 35px;
+        }
+
+        .clouds span:before,
+        .clouds span:after {
+            height: inherit;
+            border-radius: 14px;
+            background-color: var(--med-blue);
+            width: 40px;
+        }
+
+        .clouds span:before {
+            left: -20px;
+        }
+
+        .clouds span:after {
+            right: -25px;
+        }
+
+        .cat {
+            background-color: var(--dark-brown);
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            left: 90px;
+            animation: breathe-belly 8s ease infinite;
+        }
+
+        .cat-body {
+            position: absolute;
+            width: 45px;
+            height: 125px;
+            border-top-left-radius: 45px;
+            border-top-right-radius: 45px;
+            background-color: inherit;
+            bottom: 0;
+            transform-origin: left bottom;
+            animation: breathe-body 8s ease infinite;
+        }
+
+        @keyframes breathe-body {
+
+            0%,
+            5%,
+            100% {
+                height: 125px;
+            }
+
+            20%,
+            55% {
+                height: 125px;
+            }
+
+            60%,
+            90% {
+                height: 88px;
+            }
+        }
+
+        .cat-belly {
+            background-color: inherit;
+            position: absolute;
+            width: 85px;
+            height: 85px;
+            bottom: 0;
+            border-radius: 50%;
+            transform-origin: left bottom;
+        }
+
+        .cat-belly:before {
+            background-color: inherit;
+            width: 12px;
+            height: 100px;
+            top: 73px;
+            right: 14px;
+            border-radius: 12px;
+        }
+
+        @keyframes breathe-belly {
+
+            0%,
+            20%,
+            50%,
+            100% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(1.02);
+            }
+        }
+
+        .cat-ears:before {
+            width: 0;
+            height: 0;
+            border-bottom: 30px solid var(--dark-brown);
+            border-right: 35px solid transparent;
+            top: -10px;
+        }
+
+        .cat-ears:after {
+            width: 0;
+            height: 0;
+            border-bottom: 30px solid var(--dark-brown);
+            border-left: 35px solid transparent;
+            top: -10px;
+            right: 0;
+        }
+      </style>
+</head>
+<body>
+
+<div class="content">
+    <section >
+        <div class="container">
+            <div class="window">
+                <div class="window-details"></div>
+                <div class="mountains-left"></div>
+                <div class="mountains-right"></div>
+                <div class="moon"></div>
+                <div class="star star-glow star-1"></div>
+                <div class="star star-glow star-2"></div>
+                <div class="star star-3"></div>
+                <div class="star star-4"></div>
+                <div class="star star-5"></div>
+                <div class="clouds">
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <div class="cat">
+                    <div class="cat-body">
+                        <div class="cat-ears"></div>
+                    </div>
+                    <div class="cat-belly"></div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <h2>《いつも何度でも》 <br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by 伊藤サチコ</h2><br>
+    <p style="margin-left: 30px;">致童年<br>
+        以及<br>
+        那些在洛克王国里的日子</p>
+        <br><br>
+    <audio controls>
+        <source src="伊藤サチコ - いつも何度でも.mp3" type="audio/mpeg">
+      </audio><br><br><br><br><br><br><br><br><br><br><br>
+      </b>
+      <p>
+        <button class="animated-button" onclick="window.location.href='bbbpage1.html'" style="margin-left: 20px">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">返回主页</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button>
+    </p>
+    <br><br>
+    <p>
+        <button class="animated-button" onclick="window.location.href='More.html'" style="margin-left: 20px">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+            <span class="text">More About I & Music</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+            </svg>
+        </button>
+    </p>
+    
+</div>
+
+</body>
+</html>
